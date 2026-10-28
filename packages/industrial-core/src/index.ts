@@ -35,3 +35,17 @@ export type {
 } from './state/ICEIndustrialStateStore.js';
 export { ICEIndustrialStateStore } from
   './state/ICEIndustrialStateStore.js';
+export type {
+  ICEIndustrialEvent,
+  ICEIndustrialEventInput,
+} from './event/ICEIndustrialEventStore.js';
+export { ICEIndustrialEventStore } from
+  './event/ICEIndustrialEventStore.js';
+export type {
+  ICEIndustrialAbortSignal,
+  ICEIndustrialOperationCapability,
+  ICEIndustrialOperationContext,
+  ICEIndustrialOperationHandler,
+} from './operation/ICEIndustrialOperationRegistry.js';
+export { ICEIndustrialOperationRegistry } from
+  './operation/ICEIndustrialOperationRegistry.js';
