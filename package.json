@@ -1,0 +1,26 @@
+{
+  "name": "ice3-industrial-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": "^24.0.0 || >=26.0.0",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && tsc -b",
+    "typecheck": "tsc -b --pretty false",
+    "test": "node-test run",
+    "test:architecture": "node --test tests/architecture/package-boundaries.test.mjs",
+    "verify": "npm run test:architecture && npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2",
+    "node-test": "5.0.5"
+  }
+}
