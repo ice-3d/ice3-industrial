@@ -47,6 +47,7 @@ const EMPTY_ENTITIES = Object.freeze(
 );
 
 export class ICEIndustrialEntityRegistry {
+  readonly types: ICEIndustrialTypeRegistry;
   readonly #entitiesById: ReadonlyMap<string, ICEIndustrialEntity>;
   readonly #identities: ReadonlyMap<string, ICEIndustrialEntity>;
   readonly #byType: ReadonlyMap<string, readonly ICEIndustrialEntity[]>;
@@ -62,6 +63,7 @@ export class ICEIndustrialEntityRegistry {
     const byType = new Map<string, ICEIndustrialEntity[]>();
     const byParent = new Map<string, ICEIndustrialEntity[]>();
 
+    this.types = types;
     for (const entity of entities) {
       if (entitiesById.has(entity.id)) {
         throw new Error(

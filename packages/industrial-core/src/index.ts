@@ -15,3 +15,18 @@ export { ICEIndustrialTypeRegistry } from
   './registry/ICEIndustrialTypeRegistry.js';
 export { ICEIndustrialEntityRegistry } from
   './registry/ICEIndustrialEntityRegistry.js';
+export type {
+  ICEIndustrialRelationQuery,
+} from './relation/ICEIndustrialRelationGraph.js';
+export { ICEIndustrialRelationGraph } from
+  './relation/ICEIndustrialRelationGraph.js';
+export type {
+  ICEIndustrialEntityQuery,
+} from './query/ICEIndustrialQuery.js';
+export { ICEIndustrialQuery } from './query/ICEIndustrialQuery.js';
+export type {
+  ICEIndustrialPropertyValue,
+  ICEIndustrialQuality,
+  ICEIndustrialStateChange,
+  ICEIndustrialStatePatch,
+} from './state/ICEIndustrialState.js';
