@@ -30,3 +30,8 @@ export type {
   ICEIndustrialStateChange,
   ICEIndustrialStatePatch,
 } from './state/ICEIndustrialState.js';
+export type {
+  ICEIndustrialStateDiagnostics,
+} from './state/ICEIndustrialStateStore.js';
+export { ICEIndustrialStateStore } from
+  './state/ICEIndustrialStateStore.js';
