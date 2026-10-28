@@ -319,7 +319,7 @@ function vector(
 ): readonly [number, number, number] {
   const entries = array(value, path);
   if (entries.length !== 3) {
-    invalid(`${path} must contain exactly three numbers`);
+    invalid(`${path} must contain exactly 3 numbers`);
   }
   entries.forEach((entry, index) =>
     finiteNumber(entry, `${path}[${index}]`));

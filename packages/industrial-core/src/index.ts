@@ -58,3 +58,9 @@ export { ICEIndustrialWorkspace } from
   './workspace/ICEIndustrialWorkspace.js';
 export { serializeIndustrialWorkspace } from
   './workspace/serializeIndustrialWorkspace.js';
+export type {
+  ICEIndustrialAssetAdapter,
+} from './adapter/ICEIndustrialAssetAdapter.js';
+export { ICEIndustrialAdapterRegistry } from
+  './adapter/ICEIndustrialAdapterRegistry.js';
+export { iceJsonAdapter } from './adapter/ICEJsonAdapter.js';

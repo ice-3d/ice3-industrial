@@ -2,6 +2,9 @@ import type {
   ICEIndustrialValue,
 } from '../manifest/ICEIndustrialManifest.js';
 import type {
+  ICEIndustrialPropertyDefinition,
+} from '../manifest/ICEIndustrialManifest.js';
+import type {
   ICEIndustrialEntityRegistry,
 } from '../registry/ICEIndustrialEntityRegistry.js';
 import type {
@@ -134,8 +137,11 @@ function stateKey(entityId: string, propertyId: string): string {
 
 export class ICEIndustrialStateStore {
   readonly #entities: ICEIndustrialEntityRegistry;
-  readonly #types: ICEIndustrialTypeRegistry;
   readonly #schedule: (callback: () => void) => void;
+  readonly #propertyDefinitions: ReadonlyMap<
+    string,
+    ICEIndustrialPropertyDefinition
+  >;
   readonly #values = new Map<string, ICEIndustrialPropertyValue>();
   readonly #listeners = new Set<(
     changes: readonly ICEIndustrialStateChange[],
@@ -154,8 +160,20 @@ export class ICEIndustrialStateStore {
     schedule: (callback: () => void) => void = scheduleMicrotask,
   ) {
     this.#entities = entities;
-    this.#types = types;
     this.#schedule = schedule;
+    const propertyDefinitions = new Map<
+      string,
+      ICEIndustrialPropertyDefinition
+    >();
+    for (const type of types.list()) {
+      for (const definition of type.propertyDefinitions) {
+        propertyDefinitions.set(
+          stateKey(type.id, definition.id),
+          definition,
+        );
+      }
+    }
+    this.#propertyDefinitions = propertyDefinitions;
   }
 
   get diagnostics(): ICEIndustrialStateDiagnostics {
@@ -307,9 +325,8 @@ export class ICEIndustrialStateStore {
     if (entity === undefined) {
       invalid(`${path} references an unknown entity`);
     }
-    const type = this.#types.require(entity.typeId);
-    const definition = type.propertyDefinitions.find(
-      (candidate) => candidate.id === patch.propertyId,
+    const definition = this.#propertyDefinitions.get(
+      stateKey(entity.typeId, patch.propertyId),
     );
     if (definition === undefined) {
       invalid(`${path} references an unknown property`);
