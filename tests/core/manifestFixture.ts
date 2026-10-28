@@ -20,19 +20,19 @@ export function manifestFixture(): Mutable<ICEIndustrialWorkspaceManifest> {
         label: 'Pump',
         propertyDefinitions: [
           {
-            id: 'running',
-            label: 'Running',
-            dataType: 'boolean',
-            readable: true,
-            writable: false,
-          },
-          {
             id: 'mode',
             label: 'Mode',
             dataType: 'enum',
             readable: true,
             writable: true,
             enumValues: ['auto', 'manual'],
+          },
+          {
+            id: 'running',
+            label: 'Running',
+            dataType: 'boolean',
+            readable: true,
+            writable: false,
           },
         ],
         operationDefinitions: [

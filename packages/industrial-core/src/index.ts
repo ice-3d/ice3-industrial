@@ -49,3 +49,12 @@ export type {
 } from './operation/ICEIndustrialOperationRegistry.js';
 export { ICEIndustrialOperationRegistry } from
   './operation/ICEIndustrialOperationRegistry.js';
+export type {
+  ICEIndustrialFilter,
+  ICEIndustrialTimeRange,
+  ICEIndustrialWorkspaceContext,
+} from './workspace/ICEIndustrialWorkspaceContext.js';
+export { ICEIndustrialWorkspace } from
+  './workspace/ICEIndustrialWorkspace.js';
+export { serializeIndustrialWorkspace } from
+  './workspace/serializeIndustrialWorkspace.js';
