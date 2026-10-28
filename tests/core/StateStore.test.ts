@@ -1,4 +1,5 @@
-import { expect, test } from 'node-test';
+import { test } from 'node:test';
+import { expect } from '#test-expect';
 import {
   ICEIndustrialEntityRegistry,
   ICEIndustrialQuery,
@@ -143,7 +144,7 @@ test('keeps bad-quality values queryable and returns a detached snapshot', () =>
   }).map((entity) => entity.id)).toEqual(['pump-01']);
 
   const snapshot = store.snapshot();
-  expect(snapshot).toHaveLength(2);
+  expect(snapshot.size).toBe(2);
   expect(Object.isFrozen(store.get('pump-01', 'mode'))).toBe(true);
   expect(types.require('pump').propertyDefinitions).toHaveLength(2);
 });
