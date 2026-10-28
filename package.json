@@ -6,6 +6,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "imports": {
+    "#test-expect": "./tests/assertions.ts"
+  },
   "engines": {
     "node": "^24.0.0 || >=26.0.0",
     "npm": ">=11"
@@ -14,13 +17,15 @@
     "clean": "node scripts/clean.mjs",
     "build": "npm run clean && tsc -b",
     "typecheck": "tsc -b --pretty false",
-    "test": "node-test run",
+    "test": "node scripts/run-tests.mjs",
     "test:architecture": "node --test tests/architecture/package-boundaries.test.mjs",
     "verify": "npm run test:architecture && npm run typecheck && npm test"
   },
   "devDependencies": {
     "@types/node": "24.19.2",
+    "expect": "30.5.2",
+    "jest-mock": "30.5.2",
     "typescript": "7.0.2",
-    "node-test": "5.0.5"
+    "tsx": "4.23.15"
   }
 }

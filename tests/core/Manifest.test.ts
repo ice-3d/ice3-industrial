@@ -1,4 +1,5 @@
-import { expect, it, test } from 'node-test';
+import { it, test } from 'node:test';
+import { expect } from '#test-expect';
 import { parseIndustrialManifest } from
   '../../packages/industrial-core/src/index.js';
 import { manifestFixture } from './manifestFixture.js';
@@ -18,7 +19,7 @@ test('parses and freezes a valid workspace manifest', () => {
   );
 });
 
-it.each([
+for (const [name, mutate] of [
   ['missing entity type', (m) => { m.entities[0]!.typeId = 'missing'; }],
   ['missing parent', (m) => { m.entities[0]!.parentId = 'missing'; }],
   ['dangling relation', (m) => { m.relations[0]!.toEntityId = 'missing'; }],
@@ -74,9 +75,11 @@ it.each([
       enabled: null,
     };
   }],
-])('rejects %s', (_name, mutate) => {
-  const manifest = manifestFixture();
-  mutate(manifest);
-  expect(() => parseIndustrialManifest(manifest))
-    .toThrow(/ICE3_INDUSTRIAL_MANIFEST_INVALID/);
-});
+] as const) {
+  it(`rejects ${name}`, () => {
+    const manifest = manifestFixture();
+    mutate(manifest);
+    expect(() => parseIndustrialManifest(manifest))
+      .toThrow(/ICE3_INDUSTRIAL_MANIFEST_INVALID/);
+  });
+}
