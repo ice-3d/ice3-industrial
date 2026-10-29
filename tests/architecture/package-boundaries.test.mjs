@@ -14,6 +14,8 @@ test('industrial-core has no runtime dependencies', async () => {
   );
 
   assert.equal(manifest.name, '@ice3/industrial-core');
+  assert.equal(manifest.version, '0.1.0');
+  assert.equal(manifest.private, undefined);
   assert.deepEqual(manifest.dependencies ?? {}, {});
   assert.deepEqual(manifest.peerDependencies ?? {}, {});
   assert.deepEqual(manifest.optionalDependencies ?? {}, {});

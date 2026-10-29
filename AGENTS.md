@@ -13,6 +13,7 @@
 - 应用 workflow、审批、客户特定规则和 Agent 行为留在本仓库之外。
 - 渲染后的 Scene identity 通过声明接口映射；展示用 LOD Node 不得替代权威 Entity identity。
 - 行为变化必须保持确定性顺序、不可变 snapshot 和稳定 Diagnostic。
+- npm 公开发布 package 为 `@ice3/industrial-core`，初始公开版本从 `0.1.0` 开始。
 
 ## 数据边界
 

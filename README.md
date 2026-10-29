@@ -43,6 +43,12 @@ npm install
 npm run build
 ```
 
+作为 npm package 安装：
+
+```bash
+npm install @ice3/industrial-core
+```
+
 ```ts
 import {
   ICEIndustrialWorkspace,
