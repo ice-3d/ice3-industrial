@@ -1,4 +1,4 @@
-# ICE3 Industrial Documentation Index
+# ICE3 Industrial 文档索引
 
 > Document ID: ICE3-IND-IDX-001
 >
@@ -6,29 +6,29 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Start Here
+## 从这里开始
 
-| ID | Title | Status | Purpose |
+| ID | 标题 | Status | 用途 |
 |---|---|---|---|
-| `ICE3-IND-RM-001` | [Industrial Semantic Core](../README.md) | Active | Package purpose, capabilities, and quick start |
-| `ICE3-IND-ARC-001` | [Architecture](architecture.md) | Active | Core components, identity, data flow, and failures |
-| `ICE3-IND-IDX-002` | [Architecture Decisions](decisions/README.md) | Active | Index of industrial semantic decisions |
+| `ICE3-IND-RM-001` | [Industrial Semantic Core](../README.md) | Active | Package 用途、能力和快速开始 |
+| `ICE3-IND-ARC-001` | [架构](architecture.md) | Active | Core component、identity、数据流和失败行为 |
+| `ICE3-IND-IDX-002` | [架构决策](decisions/README.md) | Active | Industrial semantic 决策索引 |
 
-## Guides And Reference
+## 指南与参考
 
-| ID | Title | Status | Purpose |
+| ID | 标题 | Status | 用途 |
 |---|---|---|---|
-| `ICE3-IND-GUIDE-001` | [Getting Started](guides/getting-started.md) | Active | Build workspaces and run common workflows |
-| `ICE3-IND-API-001` | [Public API](reference/api.md) | Active | Exported types, classes, methods, and errors |
+| `ICE3-IND-GUIDE-001` | [快速开始](guides/getting-started.md) | Active | 构建 workspace 并运行常见工作流 |
+| `ICE3-IND-API-001` | [公开 API](reference/api.md) | Active | 导出的 type、class、method 和 error |
 
-## Decisions
+## 决策
 
-| ID | Title | Status | Purpose |
+| ID | 标题 | Status | 用途 |
 |---|---|---|---|
-| `ICE3-IND-ADR-001` | [Zero Runtime Dependencies](decisions/0001-zero-runtime-dependencies.md) | Active | Keep the core portable and deterministic |
-| `ICE3-IND-ADR-002` | [Manifest And State Separation](decisions/0002-manifest-state-separation.md) | Active | Separate static semantics from live values |
-| `ICE3-IND-ADR-003` | [Stable Identity Model](decisions/0003-stable-identity-model.md) | Active | Keep entity, external, and scene identity independent |
+| `ICE3-IND-ADR-001` | [零 Runtime Dependency](decisions/0001-zero-runtime-dependencies.md) | Active | 保持 core 可移植且具有确定性 |
+| `ICE3-IND-ADR-002` | [Manifest 与 State 分离](decisions/0002-manifest-state-separation.md) | Active | 分离静态语义与 live value |
+| `ICE3-IND-ADR-003` | [稳定 Identity 模型](decisions/0003-stable-identity-model.md) | Active | 保持 entity、external 和 Scene identity 独立 |
 
-## Related Documents
+## 关联文档
 
-- `ICE3-DOC-ARC-001` — [ICE3 family architecture](https://github.com/ice-3d/ice3-doc/blob/main/docs/architecture.md)
+- `ICE3-DOC-ARC-001` — [ICE3 家族架构](https://github.com/ice-3d/ice3-doc/blob/main/docs/architecture.md)
