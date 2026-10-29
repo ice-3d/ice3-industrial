@@ -1,4 +1,4 @@
-# ICE3 Industrial Repository Rules
+# ICE3 Industrial 仓库规则
 
 > Document ID: ICE3-IND-POL-001
 >
@@ -6,45 +6,45 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Architecture
+## 架构
 
-- `@ice3/industrial-core` remains browser-independent and has no runtime dependency.
-- Industrial identity, relations, state, queries, context, events, and operations are generic platform capabilities.
-- Application workflows, approvals, customer-specific rules, and Agent behavior remain outside this repository.
-- Rendered scene identities map through declared interfaces; presentation LOD nodes never replace canonical entity identity.
-- Behavioral changes preserve deterministic ordering, immutable snapshots, and stable diagnostics.
+- `@ice3/industrial-core` 保持浏览器独立，并且没有 runtime dependency。
+- Industrial identity、relation、state、query、context、event 和 operation 都是通用平台能力。
+- 应用 workflow、审批、客户特定规则和 Agent 行为留在本仓库之外。
+- 渲染后的 Scene identity 通过声明接口映射；展示用 LOD Node 不得替代权威 Entity identity。
+- 行为变化必须保持确定性顺序、不可变 snapshot 和稳定 Diagnostic。
 
-## Data boundary
+## 数据边界
 
-- Tests and examples use synthetic industrial manifests and state.
-- Do not commit customer manifests, historian exports, live-tag snapshots, or other customer data.
-- Shared manifest, identity, or operation schemas must be documented in `ice3-doc` before multiple repositories depend on them.
+- 测试和示例使用虚构 industrial manifest 与 state。
+- 不得提交客户 manifest、historian export、live-tag snapshot 或其他客户数据。
+- 多个仓库依赖共享 manifest、identity 或 operation schema 前，必须在 `ice3-doc` 中定义。
 
-## Delivery
+## 交付
 
-- Use Node.js 24.22.1 LTS from `.nvmrc`.
-- Develop on a feature branch and merge to `main` only after the full verification gate passes.
-- Every behavioral change follows RED-GREEN-REFACTOR.
-- Do not add a runtime dependency without an explicit architecture decision.
+- 使用 `.nvmrc` 指定的 Node.js 24.22.1 LTS。
+- 在功能分支开发，完整验证门禁通过后才可合入 `main`。
+- 每项行为变化遵循 RED-GREEN-REFACTOR。
+- 没有明确架构决策时不得增加 runtime dependency。
 
-## Commit identity
+## 提交身份
 
-- Every Git author and committer name in this repository must be `damoqiongqiu`.
-- Verify the configured and recorded names before committing, merging, or pushing.
+- 本仓库所有 Git author 和 committer 名称必须为 `damoqiongqiu`。
+- 提交、合并或推送前核对配置名称与提交记录。
 
-## Naming and legal boundary
+## 命名与法律边界
 
-- Do not use competitor, vendor, or third-party product names in documents, code, comments, identifiers, links, examples, diagnostics, or commits.
-- Describe comparisons only with neutral category names.
-- Do not link to external research that exposes prohibited names.
+- 文档、代码、注释、标识、链接、示例、Diagnostic 或 commit 中不得出现竞品、厂商或第三方产品名称。
+- 技术比较使用中性类别描述。
+- 不得链接会暴露禁止名称的外部调研资料。
 
-## Verification
+## 验证
 
 ```bash
 npm run verify
 ```
 
-## Related Documents
+## 关联文档
 
-- `ICE3-IND-IDX-001` — [Documentation index](docs/README.md)
-- `ICE3-IND-ARC-001` — [Industrial architecture](docs/architecture.md)
+- `ICE3-IND-IDX-001` — [文档索引](docs/README.md)
+- `ICE3-IND-ARC-001` — [Industrial 架构](docs/architecture.md)

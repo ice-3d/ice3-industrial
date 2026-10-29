@@ -6,32 +6,31 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-`@ice3/industrial-core` maps rendered geometry to stable industrial entities. It
-provides types, entities, relations, live properties, queries, workspace context,
-events, operations, and a deterministic native JSON representation.
+`@ice3/industrial-core` 将渲染后的 Geometry 映射到稳定工业实体，提供 type、entity、
+relation、live property、query、workspace context、event、operation 和确定性 native
+JSON 表示。
 
-The package is browser-independent and has no runtime dependencies. It does not
-own rendering, network transports, customer workflows, domain rules, approvals,
-or Agent behavior.
+该 package 不依赖浏览器，也没有 runtime dependency。它不负责 rendering、network
+transport、客户工作流、领域规则、审批或 Agent 行为。
 
-## Capabilities
+## 能力
 
-| Area | Capability |
+| 领域 | 能力 |
 |---|---|
-| Manifest | Strict versioned industrial manifest validation |
-| Types | Property and operation definitions with parent types |
-| Entities | Stable internal, external, and scene-selection identities |
-| Relations | Directed or undirected typed links and bounded traversal |
-| State | Transactional latest-wins updates with quality and timestamps |
-| Query | Typed filters over identity, hierarchy, state, and values |
-| Context | Selection, visibility, isolation, highlight, filter, and time range |
-| Events | Bounded ordered history and subscription |
-| Operations | Declared capabilities with validated input and output |
-| Adapters | Deterministic native ICE JSON import and export |
+| Manifest | 严格校验带版本的 industrial manifest |
+| Type | 定义 property、operation 及其父类型 |
+| Entity | 稳定的内部、外部和 Scene Selection identity |
+| Relation | 有向或无向的 typed link，以及有边界 traversal |
+| State | 带 quality 和 timestamp 的事务型 latest-wins update |
+| Query | 按 identity、层级、state 和 value 筛选的 typed filter |
+| Context | Selection、visibility、isolation、highlight、filter 和时间范围 |
+| Event | 有界、有序的 history 与 subscription |
+| Operation | 声明式 capability，并校验输入与输出 |
+| Adapter | 确定性的 native ICE JSON 导入与导出 |
 
-## Quick Start
+## 快速开始
 
-Requirements:
+运行要求：
 
 - Node.js 24.22.1 LTS
 - npm 11 or newer
@@ -95,17 +94,16 @@ const runningPumps = workspace.queryEntities({
 });
 ```
 
-## Design Boundaries
+## 设计边界
 
-- Static manifest data and live state are separate.
-- Entity identity is independent from display names and mesh identifiers.
-- Updates are validated and committed as one batch.
-- Query results and snapshots are immutable and deterministic.
-- Shared workspace context is display and interaction state, not persisted
-  business data.
-- Agent clients use the same public operations as other callers.
+- 静态 manifest 数据与 live state 分离。
+- Entity identity 独立于 display name 和 mesh identifier。
+- Update 作为一个 Batch 校验并提交。
+- Query result 和 snapshot 不可变且具有确定性。
+- 共享 workspace context 表示显示和交互状态，不是持久化业务数据。
+- Agent client 和其他调用方使用同一套公开 operation。
 
-## Verification
+## 验证
 
 ```bash
 npm run docs:check
@@ -115,18 +113,18 @@ npm test
 npm run verify
 ```
 
-## Documentation
+## 文档
 
-- [Documentation index](docs/README.md)
-- [Architecture](docs/architecture.md)
-- [Getting started and workflows](docs/guides/getting-started.md)
-- [Public API reference](docs/reference/api.md)
-- [Architecture decisions](docs/decisions/README.md)
+- [文档索引](docs/README.md)
+- [架构](docs/architecture.md)
+- [快速开始与工作流](docs/guides/getting-started.md)
+- [公开 API 参考](docs/reference/api.md)
+- [架构决策](docs/decisions/README.md)
 
-## AI-assisted development
+## AI 辅助开发
 
-This project makes substantial use of AI-assisted development. 本项目在设计和实现过程中大量使用了 AI 辅助开发。
+本项目在设计和实现过程中大量使用了 AI 辅助开发。
 
-## License
+## 许可证
 
-This project is licensed under the [MIT License](LICENSE).
+本项目采用 [MIT License](LICENSE) 许可。

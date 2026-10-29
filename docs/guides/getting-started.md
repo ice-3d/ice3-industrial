@@ -1,4 +1,4 @@
-# ICE3 Industrial Getting Started
+# ICE3 Industrial 快速开始
 
 > Document ID: ICE3-IND-GUIDE-001
 >
@@ -6,15 +6,15 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Intended Outcome
+## 目标结果
 
-Create a validated industrial workspace, update live state, query entities,
-traverse relations, change context, and serialize the static manifest.
+创建已校验 industrial workspace，更新 live state、查询 Entity、遍历 Relation、修改
+context，并序列化 static manifest。
 
-## Prerequisites
+## 前置条件
 
 - Node.js 24.22.1 LTS
-- npm 11 or newer
+- npm 11 或更高版本
 
 ```bash
 nvm use
@@ -22,7 +22,7 @@ npm install
 npm run build
 ```
 
-## Create A Workspace
+## 创建 Workspace
 
 ```ts
 import {
@@ -75,7 +75,7 @@ workspace.updateProperties([{
 }]);
 ```
 
-A malformed patch rejects the complete batch.
+格式错误的 patch 会拒绝整个 batch。
 
 ## Query
 
@@ -86,9 +86,9 @@ const pumps = workspace.queryEntities({
 });
 ```
 
-Results are detached, read-only, and deterministically ordered.
+Result 从内部 state 分离，只读且顺序确定。
 
-## Change Context
+## 修改 Context
 
 ```ts
 workspace.setSelection(['pump-01'], { source: 'operator' });
@@ -99,9 +99,9 @@ workspace.setFilters([{
 }]);
 ```
 
-Selection and view state are not written into the static manifest.
+Selection 和 view state 不写入 static manifest。
 
-## Subscribe
+## 订阅
 
 ```ts
 const unsubscribe = workspace.on('STATE_CHANGE', (changes) => {
@@ -112,15 +112,15 @@ unsubscribe();
 workspace.dispose();
 ```
 
-## Expected Result
+## 预期结果
 
-- Invalid manifests produce no workspace.
-- State changes are observed once per committed batch.
-- Queries use canonical entity IDs.
-- Serialized manifests preserve deterministic key and collection order.
+- 无效 manifest 不产生 workspace。
+- 每个 committed batch 的 state change 只观察一次。
+- Query 使用权威 Entity ID。
+- Serialized manifest 保持确定性 key 和 collection 顺序。
 
-## Related Documents
+## 关联文档
 
-- `ICE3-IND-API-001` — [Public API](../reference/api.md)
-- `ICE3-IND-ARC-001` — [Architecture](../architecture.md)
-- `ICE3-IND-ADR-002` — [Manifest and state separation](../decisions/0002-manifest-state-separation.md)
+- `ICE3-IND-API-001` — [公开 API](../reference/api.md)
+- `ICE3-IND-ARC-001` — [架构](../architecture.md)
+- `ICE3-IND-ADR-002` — [Manifest 与 State 分离](../decisions/0002-manifest-state-separation.md)
