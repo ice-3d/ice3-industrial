@@ -13,7 +13,7 @@ traverse relations, change context, and serialize the static manifest.
 
 ## Prerequisites
 
-- Node.js 24 LTS or 26+
+- Node.js 24.22.1 LTS
 - npm 11 or newer
 
 ```bash
