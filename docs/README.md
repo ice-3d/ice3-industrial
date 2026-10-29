@@ -13,6 +13,7 @@
 | `ICE3-IND-RM-001` | [Industrial Semantic Core](../README.md) | Active | Package 用途、能力和快速开始 |
 | `ICE3-IND-ARC-001` | [架构](architecture.md) | Active | Core component、identity、数据流和失败行为 |
 | `ICE3-IND-IDX-002` | [架构决策](decisions/README.md) | Active | Industrial semantic 决策索引 |
+| `ICE3-IND-POL-001` | [仓库规则](../AGENTS.md) | Active | 数据边界、交付与提交规则 |
 
 ## 指南与参考
 

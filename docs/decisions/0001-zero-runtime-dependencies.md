@@ -1,4 +1,4 @@
-# Zero Runtime Dependencies
+# 零 Runtime dependency
 
 > Document ID: ICE3-IND-ADR-001
 >
@@ -6,40 +6,38 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Context
+## 背景
 
-The semantic core should run in browsers, workers, Node.js services, tests, and
-future adapters without pulling rendering, network, UI, or protocol libraries
-into its dependency graph.
+Semantic core 应可运行在 browser、Worker、Node.js service、test 和未来 adapter 中，
+而不把 rendering、network、UI 或 protocol library 引入 dependency graph。
 
-## Decision
+## 决策
 
-`@ice3/industrial-core` has zero runtime dependencies and does not import DOM,
-WebGL, filesystem, network, engine, or Agent packages.
+`@ice3/industrial-core` 没有 runtime dependency，也不导入 DOM、WebGL、filesystem、
+network、Engine 或 Agent package。
 
-## Considered Alternatives
+## 备选方案
 
-- Use a schema or graph library for validation and traversal.
-- Depend on the engine package for spatial types.
-- Put adapters and network connectors in the core.
+- 使用 schema 或 graph library 执行 validation 和 traversal。
+- 为 spatial type 依赖 Engine package。
+- 将 adapter 和 network connector 放入 core。
 
-These alternatives reduce a small amount of code but make deployment and
-compatibility unnecessarily broad.
+这些方案减少少量代码，却会让 deployment 和 compatibility 范围不必要地扩大。
 
-## Consequences
+## 影响
 
-- The package remains portable and inexpensive to embed.
-- Validation and graph behavior are explicit project code.
-- Integrations live in adapters and applications.
-- Architecture tests can enforce the dependency boundary.
+- Package 保持可移植且嵌入成本低。
+- Validation 和 graph behavior 是明确的工程代码。
+- Integration 位于 adapter 和应用中。
+- Architecture test 可以强制 dependency boundary。
 
-## Verification
+## 验证
 
 ```bash
 npm run test:architecture
 ```
 
-## Related Documents
+## 关联文档
 
-- `ICE3-IND-ARC-001` — [Architecture](../architecture.md)
-- `ICE3-DOC-ADR-001` — [Universal engine and vertical applications](https://github.com/ice-3d/ice3-doc/blob/main/docs/decisions/0001-universal-engine-and-vertical-applications.md)
+- `ICE3-IND-ARC-001` — [架构](../architecture.md)
+- `ICE3-DOC-ADR-001` — [通用 Engine 与垂直应用](https://github.com/ice-3d/ice3-doc/blob/main/docs/decisions/0001-universal-engine-and-vertical-applications.md)

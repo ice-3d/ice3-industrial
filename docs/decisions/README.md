@@ -1,4 +1,4 @@
-# ICE3 Industrial Architecture Decision Index
+# ICE3 Industrial 架构决策索引
 
 > Document ID: ICE3-IND-IDX-002
 >
@@ -6,15 +6,15 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Decisions
+## 决策
 
-| ID | Decision | Status | Purpose |
+| ID | 决策 | Status | 用途 |
 |---|---|---|---|
-| `ICE3-IND-ADR-001` | [Zero runtime dependencies](0001-zero-runtime-dependencies.md) | Active | Keep the core portable and independently testable |
-| `ICE3-IND-ADR-002` | [Manifest and state separation](0002-manifest-state-separation.md) | Active | Keep static semantics separate from live values |
-| `ICE3-IND-ADR-003` | [Stable identity model](0003-stable-identity-model.md) | Active | Separate canonical, external, and scene identity |
+| `ICE3-IND-ADR-001` | [零 Runtime dependency](0001-zero-runtime-dependencies.md) | Active | 保持 core 可移植并可独立测试 |
+| `ICE3-IND-ADR-002` | [Manifest 与 State 分离](0002-manifest-state-separation.md) | Active | 分离静态 semantic 与 live value |
+| `ICE3-IND-ADR-003` | [稳定 Identity 模型](0003-stable-identity-model.md) | Active | 分离 canonical、external 和 Scene identity |
 
-## Related Documents
+## 关联文档
 
-- `ICE3-IND-IDX-001` — [Documentation index](../README.md)
-- `ICE3-IND-ARC-001` — [Architecture](../architecture.md)
+- `ICE3-IND-IDX-001` — [文档索引](../README.md)
+- `ICE3-IND-ARC-001` — [架构](../architecture.md)
