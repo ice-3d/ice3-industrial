@@ -31,6 +31,11 @@ or Agent behavior.
 
 ## Quick Start
 
+Requirements:
+
+- Node.js 24.22.1 LTS
+- npm 11 or newer
+
 ```bash
 git clone https://github.com/ice-3d/ice3-industrial.git
 cd ice3-industrial
