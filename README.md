@@ -131,3 +131,11 @@ npm pack --workspaces --dry-run --json
 ```
 
 验证包含零依赖架构检查、严格类型检查、核心单元测试，以及 10,000 个实体、50,000 个属性定义和 100,000 个状态补丁的内存合成夹具。
+
+## AI 辅助开发
+
+This project makes substantial use of AI-assisted development. 本项目在设计和实现过程中大量使用了 AI 辅助开发。
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE)。
