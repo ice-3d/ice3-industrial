@@ -21,7 +21,9 @@
     "test": "node scripts/run-tests.mjs",
     "test:architecture": "node --test tests/architecture/package-boundaries.test.mjs",
     "docs:check": "node scripts/check-docs.mjs",
-    "verify": "npm run docs:check && npm run test:architecture && npm run typecheck && npm test"
+    "verify": "npm run docs:check && npm run test:architecture && npm run typecheck && npm test",
+    "release:package": "npm run build",
+    "release:check": "npm run release:package && node scripts/check-release-package.mjs"
   },
   "devDependencies": {
     "@types/node": "24.19.2",

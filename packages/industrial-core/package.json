@@ -1,9 +1,10 @@
 {
   "name": "@ice3/industrial-core",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Deterministic industrial semantic core for ICE3",
   "license": "MIT",
   "type": "module",
+  "sideEffects": false,
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",
@@ -16,5 +17,24 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ice-3d/ice3-industrial.git",
+    "directory": "packages/industrial-core"
+  },
+  "homepage": "https://github.com/ice-3d/ice3-industrial#readme",
+  "bugs": {
+    "url": "https://github.com/ice-3d/ice3-industrial/issues"
+  },
+  "keywords": [
+    "ice3",
+    "industrial",
+    "semantic",
+    "digital-twin",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
