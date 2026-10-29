@@ -20,7 +20,8 @@
     "typecheck": "tsc -b --pretty false",
     "test": "node scripts/run-tests.mjs",
     "test:architecture": "node --test tests/architecture/package-boundaries.test.mjs",
-    "verify": "npm run test:architecture && npm run typecheck && npm test"
+    "docs:check": "node scripts/check-docs.mjs",
+    "verify": "npm run docs:check && npm run test:architecture && npm run typecheck && npm test"
   },
   "devDependencies": {
     "@types/node": "24.19.2",
