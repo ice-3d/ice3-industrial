@@ -6,12 +6,12 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## 目标结果
+## 1. 目标结果
 
 创建已校验 industrial workspace，更新 live state、查询 Entity、遍历 Relation、修改
 context，并序列化 static manifest。
 
-## 前置条件
+## 2. 前置条件
 
 - Node.js 24.22.1 LTS
 - npm 11 或更高版本
@@ -22,7 +22,7 @@ npm install
 npm run build
 ```
 
-## 创建 Workspace
+## 3. 创建 Workspace
 
 ```ts
 import {
@@ -62,7 +62,7 @@ const manifest = parseIndustrialManifest({
 const workspace = new ICEIndustrialWorkspace({ manifest });
 ```
 
-## Update State
+## 4. Update State
 
 ```ts
 workspace.updateProperties([{
@@ -77,7 +77,7 @@ workspace.updateProperties([{
 
 格式错误的 patch 会拒绝整个 batch。
 
-## Query
+## 5. Query
 
 ```ts
 const pumps = workspace.queryEntities({
@@ -88,7 +88,7 @@ const pumps = workspace.queryEntities({
 
 Result 从内部 state 分离，只读且顺序确定。
 
-## 修改 Context
+## 6. 修改 Context
 
 ```ts
 workspace.setSelection(['pump-01'], { source: 'operator' });
@@ -101,7 +101,7 @@ workspace.setFilters([{
 
 Selection 和 view state 不写入 static manifest。
 
-## 订阅
+## 7. 订阅
 
 ```ts
 const unsubscribe = workspace.on('STATE_CHANGE', (changes) => {
@@ -112,14 +112,14 @@ unsubscribe();
 workspace.dispose();
 ```
 
-## 预期结果
+## 8. 预期结果
 
 - 无效 manifest 不产生 workspace。
 - 每个 committed batch 的 state change 只观察一次。
 - Query 使用权威 Entity ID。
 - Serialized manifest 保持确定性 key 和 collection 顺序。
 
-## 关联文档
+## 9. 关联文档
 
 - `ICE3-IND-API-001` — [公开 API](../reference/api.md)
 - `ICE3-IND-ARC-001` — [架构](../architecture.md)

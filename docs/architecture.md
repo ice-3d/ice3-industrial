@@ -6,7 +6,7 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## 系统上下文
+## 1. 系统上下文
 
 Industrial core 将静态 Scene semantic 与 live value 转换为可查询 workspace。它位于
 通用 Engine object 之上、业务应用之下。
@@ -25,7 +25,7 @@ workspace ── state store
     └────── shared context
 ```
 
-## 组件
+## 2. 组件
 
 | 组件 | 职责 |
 |---|---|
@@ -40,7 +40,7 @@ workspace ── state store
 | Workspace | 组合所有 store 并暴露公开 API |
 | Adapter registry | 导入和导出版本化 Asset workspace format |
 
-## 数据流
+## 3. 数据流
 
 1. Caller 提供 manifest。
 2. Parser 在创建 registry 前校验完整 manifest。
@@ -50,14 +50,14 @@ workspace ── state store
 6. Subscriber 在 commit 后接收不可变 change。
 7. Query 组合 static registry、Relation 和当前 state。
 
-## Identity
+## 4. Identity
 
 - `entity.id` 是权威 workspace identity。
 - `externalIds` 将其他系统映射到 workspace。
 - `spatial.selectionIds` 将 semantic Entity 连接到一个或多个 rendered Scene Selection。
 - LOD Node ID 和 display name 永不替代权威 identity。
 
-## 失败行为
+## 5. 失败行为
 
 - 无效 manifest 在 workspace 可用前失败。
 - 无效 state batch 不应用部分 update。
@@ -65,7 +65,7 @@ workspace ── state store
   `ICE3_INDUSTRIAL_*` error。
 - Disposed store 拒绝后续 mutation。
 
-## 关联文档
+## 6. 关联文档
 
 - `ICE3-IND-IDX-001` — [文档索引](README.md)
 - `ICE3-IND-GUIDE-001` — [快速开始](guides/getting-started.md)

@@ -6,11 +6,11 @@
 >
 > Owner: ICE3 Industrial maintainers
 
-## Package 入口
+## 1. Package 入口
 
 从 `@ice3/industrial-core` 导入所有 public symbol。
 
-## Manifest 类型
+## 2. Manifest 类型
 
 - `ICEIndustrialWorkspaceManifest`
 - `ICEIndustrialEntityType`
@@ -24,7 +24,7 @@
 
 `parseIndustrialManifest(value)` 校验并冻结完整 manifest。
 
-## Workspace
+## 3. Workspace
 
 `ICEIndustrialWorkspace` 根据已校验 manifest 创建 registry、state、event、operation
 和 query service。
@@ -50,7 +50,7 @@
 | `on(type, listener)` | 订阅并返回 unsubscribe function |
 | `dispose()` | 释放 subscription 并拒绝后续 mutation |
 
-## Registry 与 Store
+## 4. Registry 与 Store
 
 - `ICEIndustrialTypeRegistry`
 - `ICEIndustrialEntityRegistry`
@@ -62,7 +62,7 @@
 
 这些类型因 composition 和 testing 需要而公开。应用通常使用 workspace facade。
 
-## State 类型
+## 5. State 类型
 
 - `ICEIndustrialPropertyValue`
 - `ICEIndustrialStatePatch`
@@ -72,7 +72,7 @@
 
 Quality 为 `good`、`uncertain` 或 `bad`。
 
-## Context 与 Query 类型
+## 6. Context 与 Query 类型
 
 - `ICEIndustrialEntityQuery`
 - `ICEIndustrialRelationQuery`
@@ -80,7 +80,7 @@ Quality 为 `good`、`uncertain` 或 `bad`。
 - `ICEIndustrialTimeRange`
 - `ICEIndustrialWorkspaceContext`
 
-## Operation
+## 7. Operation
 
 - `ICEIndustrialOperationCapability`
 - `ICEIndustrialOperationContext`
@@ -90,7 +90,7 @@ Quality 为 `good`、`uncertain` 或 `bad`。
 Operation implementation 可注册到 `workspace.operations`。修改 state 前校验 input 和
 output schema。
 
-## Adapter
+## 8. Adapter
 
 - `ICEIndustrialAssetAdapter`
 - `ICEIndustrialAdapterRegistry`
@@ -100,7 +100,7 @@ output schema。
 Native adapter 接受 string 或 UTF-8 bytes。Adapter failure 使用
 `ICE3_INDUSTRIAL_ADAPTER_FAILED`，且不暴露部分 workspace state。
 
-## 关联文档
+## 9. 关联文档
 
 - `ICE3-IND-ARC-001` — [架构](../architecture.md)
 - `ICE3-IND-GUIDE-001` — [快速开始](../guides/getting-started.md)

@@ -13,7 +13,7 @@ JSON 表示。
 该 package 不依赖浏览器，也没有 runtime dependency。它不负责 rendering、network
 transport、客户工作流、领域规则、审批或 Agent 行为。
 
-## 能力
+## 1. 能力
 
 | 领域 | 能力 |
 |---|---|
@@ -28,7 +28,7 @@ transport、客户工作流、领域规则、审批或 Agent 行为。
 | Operation | 声明式 capability，并校验输入与输出 |
 | Adapter | 确定性的 native ICE JSON 导入与导出 |
 
-## 快速开始
+## 2. 快速开始
 
 运行要求：
 
@@ -100,7 +100,7 @@ const runningPumps = workspace.queryEntities({
 });
 ```
 
-## 设计边界
+## 3. 设计边界
 
 - 静态 manifest 数据与 live state 分离。
 - Entity identity 独立于 display name 和 mesh identifier。
@@ -109,7 +109,7 @@ const runningPumps = workspace.queryEntities({
 - 共享 workspace context 表示显示和交互状态，不是持久化业务数据。
 - Agent client 和其他调用方使用同一套公开 operation。
 
-## 验证
+## 4. 验证
 
 ```bash
 npm run docs:check
@@ -119,7 +119,7 @@ npm test
 npm run verify
 ```
 
-## 文档
+## 5. 文档
 
 - [文档索引](docs/README.md)
 - [架构](docs/architecture.md)
@@ -127,10 +127,10 @@ npm run verify
 - [公开 API 参考](docs/reference/api.md)
 - [架构决策](docs/decisions/README.md)
 
-## AI 辅助开发
+## 6. AI 辅助开发
 
 本项目在设计和实现过程中大量使用了 AI 辅助开发。
 
-## 许可证
+## 7. 许可证
 
 本项目采用 [MIT License](LICENSE) 许可。
