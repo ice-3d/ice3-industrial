@@ -6,6 +6,9 @@
 >
 > Owner: ICE3 Industrial maintainers
 
+[![npm](https://img.shields.io/npm/v/%40ice3%2Findustrial-core?label=%40ice3%2Findustrial-core)](https://www.npmjs.com/package/@ice3/industrial-core)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 `@ice3/industrial-core` 将渲染后的 Geometry 映射到稳定工业实体，提供 type、entity、
 relation、live property、query、workspace context、event、operation 和确定性 native
 JSON 表示。
@@ -127,9 +130,26 @@ npm run verify
 - [公开 API 参考](docs/reference/api.md)
 - [架构决策](docs/decisions/README.md)
 
-## 6. AI 辅助开发
+## 6. 给 AI Agent 的约定
 
-本项目在设计和实现过程中大量使用了 AI 辅助开发。
+**必须遵守**
+
+1. 这个 package **不是渲染器**。新增能力前先问：它是"工业语义"还是"画出来"？后者属于
+   `ice3`，写这里就跑偏了。
+2. 保持零 runtime dependency、不依赖浏览器——这是它能在服务端、CLI、测试里复用的前提。
+3. 公开导出走 `src/index.ts`，类型即契约；改签名等于破坏性变更，要同步
+   [Asset Preparation Contract](https://github.com/ice-3d/ice3-doc/blob/main/docs/contracts/asset-preparation-contract-v1.md)
+   里相关的部分。
+4. 版本号只有一个来源：`packages/industrial-core/package.json`。
+5. 声称完成前跑 `npm run verify`（docs / 架构 / 类型 / 单测 / release 打包全在内）。
+
+**找东西的最短路径**
+
+| 想知道 | 去哪 |
+|---|---|
+| manifest 结构与校验规则 | `packages/industrial-core/src/manifest*` |
+| 实体与 Selection identity | `packages/industrial-core/src/entity*` |
+| 跨仓库契约 | [ice3-doc](https://github.com/ice-3d/ice3-doc/blob/main/README.md) |
 
 ## 7. 许可证
 
